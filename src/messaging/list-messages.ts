@@ -29,8 +29,7 @@ const getProfileRequest = (request: ProfileRequest) => {
 };
 
 export const messages = async (profileId: string = '0x4814') => {
-  const address = getAddressFromSigner();
-  await login(address);
+  await login(getAddressFromSigner());
 
   const request = { profileId };
   const profile = await getProfileRequest(request);
@@ -41,7 +40,10 @@ export const messages = async (profileId: string = '0x4814') => {
   const convo = await client.conversations.newConversation(profile.data.profile.ownedBy);
   const messages = await convo.messages();
 
-  prettyJSON('conversation: messages', messages.map((msg) => msg.content as string).join('\n'));
+  prettyJSON(
+    'conversation: messages',
+    messages.map((msg) => msg.content as string)
+  );
 
   return messages;
 };
