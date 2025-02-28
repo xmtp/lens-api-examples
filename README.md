@@ -1,3 +1,12 @@
+[Status](https://img.shields.io/badge/Deprecated-brown)
+
+> [!CAUTION]
+> This repo is no longer maintained.
+
+The documentation below is provided for historical reference only.
+
+---
+
 # Lens API
 
 This repo has running code which you can execute to help you understand how to interact with the Lens API.
